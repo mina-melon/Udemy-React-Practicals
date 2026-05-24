@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.playpen-sans {
+  font-family: "Playpen Sans", cursive;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 32px;
+  font-family: "Roboto", sans-serif;
+  background-image: url("/bg-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  width: 100%;
+  place-items: center;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#header img {
+  width: 150px;
+  height: 50px;
+}
+
+#header p {
+  font-family: "Playpen Sans", cursive;
+  font-size: 16px;
+  font-weight: 600;
+  color: #d6c52c;
+}
+
+#game-board {
+  background-color: #d6c52c;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding: 20px;
+  width: 700px;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 12px;
+}
+
+.score-board div {
+  padding: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 3px solid;
+  border-color: #722378;
+  width: 100%;
+}
+
+.score-board p {
+  color: #230046;
+  font-weight: 600;
+}
+
+.icon-board {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.start-text {
+  font-family: "Playpen Sans", cursive;
+  font-weight: bold;
+  color: #230046;
+  font-size: 14px;
+}
+.icon-board div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-container {
+  padding: 14px 20px;
+  border-radius: 4px;
+  background-color: #722378;
+}
+
+.icon-container:hover {
+  background-color: #962e9e;
+}
+
+.icon {
+  color: white;
+}
+
+.game-over-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.game-over {
+  background-color: #d6c52c;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 24px;
+  width: 400px;
+}
+
+.display-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display-winner h2 {
+  font-family: "Playpen Sans", cursive;
+  font-weight: 700;
+  font-size: 46px;
+  color: #230046;
+  line-height: 0.5;
+}
+
+.display-winner p {
+  font-weight: bold;
+  font-size: 16px;
+  color: #230046;
+}
+
+.icon2 {
+  color: #230046;
+}
+
+.score-board2 {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid;
+  border-color: #722378;
+}
+
+.score-board2 div {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+  justify-content: space-between;
+}
+
+.score-board2 p {
+  font-weight: bold;
+  color: #230046;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 12px;
+}
+
+@media (max-width: 768px) {
+  #game-board {
+    width: 500px;
+  }
+}
