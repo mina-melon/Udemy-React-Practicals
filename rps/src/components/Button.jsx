@@ -13,6 +13,6 @@ const ButtonStyle = styled.button`
   }
 `;
 
-export default function Button({ children }) {
-  return <ButtonStyle>{children}</ButtonStyle>;
+export default function Button({ children, ...props }) {
+  return <ButtonStyle {...props}>{children}</ButtonStyle>;
 }

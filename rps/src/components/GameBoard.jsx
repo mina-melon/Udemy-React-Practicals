@@ -1,14 +1,7 @@
-import { Origami, Scissors, Stone } from "lucide-react";
 import Button from "./Button";
-import { useState } from "react";
+// import { useState } from "react";
 
-const choices = [
-  { name: "rock", icon: Stone },
-  { name: "paper", icon: Origami },
-  { name: "scissors", icon: Scissors },
-];
-
-export default function GameBoard() {
+export default function GameBoard({ getResult, result, choices, reset }) {
   return (
     <section id="game-board">
       <div className="score-board">
@@ -43,7 +36,7 @@ export default function GameBoard() {
         </div>
       </div>
 
-      <Button>RESET SCORE</Button>
+      <Button onClick={reset}>RESET SCORE</Button>
     </section>
   );
 }
