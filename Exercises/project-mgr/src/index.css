@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --lightgrey: #47484c;
+  --darkgrey: #1e2023;
+  --cream: #f2d7b6;
+}
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --font-playfair: "Playfair Display", sans-serif;
+  --color-darkgrey: var(--darkgrey);
+  --color-lightgrey: var(--lightgrey);
+  --color-cream: var(--cream);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  width: 1126px;
+  width: 100%;
+  margin: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+@layer components {
+  .sidebar {
+    @apply mt-11 mb-6 bg-linear-to-b from-darkgrey to-lightgrey h-[90%] w-[270px] rounded-tr-xl rounded-br-xl px-4 pt-5;
+    h2 {
+      @apply font-playfair text-2xl text-white;
+    }
+    menu {
+      @apply flex flex-col gap-3 mt-8;
+      li {
+        @apply w-full;
+        button {
+          @apply px-4 py-2 rounded-md bg-lightgrey/0 text-base text-white font-light hover:bg-lightgrey hover:font-normal w-full text-left;
+        }
+      }
+    }
+  }
+  .no-projects {
+    @apply flex flex-col gap-2 pt-14 items-center px-16;
+    img {
+      @apply w-50 h-47.5;
+    }
+    p {
+      @apply font-normal lg:text-base text-darkgrey md:text-sm text-center;
+    }
+  }
+}
