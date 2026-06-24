@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
 
 :root {
   --lightgrey: #47484c;
@@ -55,6 +55,27 @@ body {
     }
     p {
       @apply font-normal lg:text-base text-darkgrey md:text-sm text-center;
+    }
+  }
+  .add-project {
+    @apply flex flex-col gap-6 pt-14 px-16 w-[50%] items-start;
+    h2 {
+      @apply uppercase font-medium text-2xl;
+    }
+    .input-form {
+      @apply flex flex-col gap-8 w-full;
+      .input-container {
+        @apply flex flex-col gap-1;
+        input {
+          @apply bg-cream/18 border-b-2 border-b-lightgrey px-4 py-2;
+        }
+        textarea {
+          @apply bg-cream/18 border-b-2 border-b-lightgrey px-4 py-2 px-4 py-2;
+        }
+        label {
+          @apply uppercase font-playfair;
+        }
+      }
     }
   }
 }
