@@ -1,13 +1,17 @@
-import Button from "../styling.Button";
+import Button from "../styling/Button";
 
-export default function SideBar({ entries }) {
+export default function SideBar({ entries, handleNewEntry }) {
   return (
     <div className="sidebar">
-      <h2>Finance Tracker</h2>
-      <Button primary>New Entry</Button>
+      <h3>Finance Tracker</h3>
+      <Button primary onClick={handleNewEntry}>
+        New Entry
+      </Button>
       <div>
         {entries.map((entry) => (
-          <button key={entry.id}>{entry.name}</button>
+          <li className="list-none" key={entry.id}>
+            <Button secondary>{entry.title}</Button>
+          </li>
         ))}
       </div>
     </div>
