@@ -6,23 +6,17 @@ import Modal from "./Modal";
 export default function NewEntry({ handleSave, handleCancel }) {
   const titleRef = useRef();
   const descriptionRef = useRef();
-  const incomeRef = useRef();
-  const expensesRef = useRef();
   const dateRef = useRef();
   const modal = useRef();
 
   function handleSaveEntry() {
     const title = titleRef.current.value;
     const description = descriptionRef.current.value;
-    const income = incomeRef.current.value;
-    const expenses = expensesRef.current.value;
     const date = dateRef.current.value;
 
     if (
       title.trim() === "" ||
       description.trim() === "" ||
-      income.trim() === "" ||
-      expenses.trim() === "" ||
       date.trim() === ""
     ) {
       modal.current.open();
@@ -32,8 +26,6 @@ export default function NewEntry({ handleSave, handleCancel }) {
     const newEntry = {
       title: title,
       description: description,
-      income: income,
-      expenses: expenses,
       date: date,
     };
     handleSave(newEntry);
@@ -48,8 +40,6 @@ export default function NewEntry({ handleSave, handleCancel }) {
       </Modal>
       <Input ref={titleRef} label="title" />
       <Input ref={descriptionRef} label="description" textarea />
-      <Input ref={incomeRef} label="income" type="number" />
-      <Input ref={expensesRef} label="expenses" type="number" />
       <Input ref={dateRef} label="date" type="date" />
       <div className="btn-container">
         <Button secondary onClick={handleCancel}>
