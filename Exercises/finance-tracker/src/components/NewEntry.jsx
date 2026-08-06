@@ -40,7 +40,7 @@ export default function NewEntry({ handleSave, handleCancel }) {
       </Modal>
       <Input ref={titleRef} label="title" />
       <Input ref={descriptionRef} label="description" textarea />
-      <Input ref={dateRef} label="date" type="date" />
+      <Input ref={dateRef} label="due date" type="date" />
       <div className="btn-container">
         <Button secondary onClick={handleCancel}>
           Cancel

@@ -1,6 +1,13 @@
 import Button from "../styling/Button";
+import Savings from "./Savings";
 
-export default function EntrySelected({ entry, onDelete }) {
+export default function EntrySelected({
+  entry,
+  onDelete,
+  onAddSavings,
+  onDeleteSavings,
+  savings,
+}) {
   const formattedDate = new Date(entry.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -17,11 +24,12 @@ export default function EntrySelected({ entry, onDelete }) {
         </div>
       </header>
       <p className="whitespace-pre-wrap">{entry.description}</p>
-      <p>Entry Creation Date: {formattedDate}</p>
-      <div>
-        <hr className="my-6 border-zinc-300 mb-2" />
-        <h3>SAVINGS</h3>
-      </div>
+      <p>Entry Due Date: {formattedDate}</p>
+      <Savings
+        onAdd={onAddSavings}
+        onDelete={onDeleteSavings}
+        savings={savings}
+      />
     </div>
   );
 }

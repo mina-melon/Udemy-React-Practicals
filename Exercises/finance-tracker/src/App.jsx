@@ -9,6 +9,7 @@ function App() {
   const [entriesState, setEntriesState] = useState({
     selectedEntryId: undefined,
     entries: [],
+    savings: [],
   });
 
   // make the create new entry button functional
@@ -59,13 +60,51 @@ function App() {
       ...prev,
       selectedEntryId: undefined,
       entries: prev.entries.filter(
-        (project) => project.id !== prev.selectedEntryId,
+        (entry) => entry.id !== prev.selectedEntryId,
       ),
     }));
   }
 
+  // add new savings to entry
+  function handleAddSavings(text) {
+    const today = new Date();
+    setEntriesState((prev) => {
+      const newSavings = {
+        savings: text,
+        date: today,
+        id: crypto.randomUUID(),
+        entryId: prev.selectedEntryId,
+      };
+      return {
+        ...prev,
+        savings: [newSavings, ...prev.savings],
+      };
+    });
+  }
+
+  // get savings for current entry
+  const currentSavings = entriesState.savings.filter(
+    (saving) => saving.entryId === entriesState.selectedEntryId,
+  );
+
+  // remove savings from entry
+  function handleDeleteSavings(id) {
+    setEntriesState((prev) => ({
+      ...prev,
+      savings: prev.savings.filter((saving) => saving.id !== id),
+    }));
+  }
+
   // display dynamic content
-  let content = <EntrySelected entry={selectedEntry} onDelete={handleDelete} />;
+  let content = (
+    <EntrySelected
+      entry={selectedEntry}
+      onDelete={handleDelete}
+      onAddSavings={handleAddSavings}
+      onDeleteSavings={handleDeleteSavings}
+      savings={currentSavings}
+    />
+  );
   if (entriesState.selectedEntryId === undefined) {
     content = <NoEntrySelected handleNewEntry={handleStartAddEntry} />;
   } else if (entriesState.selectedEntryId === null) {
