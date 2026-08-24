@@ -52,7 +52,7 @@ export default [
       "It ensures you're working with the latest state value, e.g. setCount(prev => prev + 1).",
   },
   {
-    id: "F03",
+    id: "F10",
     question: "What happens when you call array.map()?",
     answer:
       "It creates and returns a new array by applying a function to every element of the original array.",
