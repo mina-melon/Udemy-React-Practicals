@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import QUESTIONS from "../../questions";
 import QuizCompleteImg from "../assets/quiz-complete.png";
+import QuestionTimer from "./Progress";
 export default function Quiz() {
   const [answersState, setAnswersState] = useState([]);
   const currentAnswersCount = answersState.length;
@@ -8,11 +9,15 @@ export default function Quiz() {
 
   const quizComplete = currentAnswersCount === QUESTIONS.length;
 
-  function handleAnswerClick(answer) {
+  const handleAnswerClick = useCallback(function handleAnswerClick(answer) {
     setAnswersState((prevAnswers) => {
       return [...prevAnswers, answer];
     });
-  }
+  }, []);
+
+  const handleTimeout = useCallback(function handleTimeout() {
+    handleAnswerClick(null);
+  }, []);
 
   if (quizComplete) {
     return (
@@ -39,6 +44,11 @@ export default function Quiz() {
             </li>
           ))}
         </ul>
+        <QuestionTimer
+          key={currentAnswersCount}
+          timeout={1500}
+          onTimeout={handleTimeout}
+        />
       </div>
     </main>
   );
