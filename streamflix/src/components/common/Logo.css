@@ -1,0 +1,79 @@
+.sf-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-fast);
+}
+
+.sf-logo:hover {
+  transform: scale(1.02);
+}
+
+.sf-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(229, 9, 20, 0.12);
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.35);
+  flex-shrink: 0;
+  transition: all var(--transition-normal);
+}
+
+.sf-logo:hover .sf-logo-icon {
+  box-shadow: 0 0 18px rgba(229, 9, 20, 0.6);
+  border-color: var(--accent-primary);
+}
+
+.sf-logo-text {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.sf-logo-text span {
+  color: var(--accent-primary);
+  text-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* SIZES */
+.sf-logo-sm .sf-logo-icon {
+  width: 26px;
+  height: 26px;
+}
+.sf-logo-sm .sf-logo-icon svg {
+  width: 14px;
+  height: 14px;
+}
+.sf-logo-sm .sf-logo-text {
+  font-size: 1.125rem;
+}
+
+.sf-logo-md .sf-logo-icon {
+  width: 32px;
+  height: 32px;
+}
+.sf-logo-md .sf-logo-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.sf-logo-md .sf-logo-text {
+  font-size: 1.375rem;
+}
+
+.sf-logo-lg .sf-logo-icon {
+  width: 40px;
+  height: 40px;
+}
+.sf-logo-lg .sf-logo-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.sf-logo-lg .sf-logo-text {
+  font-size: 1.75rem;
+}

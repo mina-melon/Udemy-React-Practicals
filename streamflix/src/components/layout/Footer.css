@@ -1,0 +1,137 @@
+.sf-footer {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-xl);
+  position: relative;
+}
+
+.sf-footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sf-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sf-footer-tagline {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 320px;
+}
+
+.sf-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sf-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.sf-social-link:hover {
+  background-color: rgba(229, 9, 20, 0.15);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* COLUMNS */
+.sf-footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.sf-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sf-footer-col-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+
+.sf-footer-col-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sf-footer-col-links a,
+.sf-footer-col-links button {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: left;
+  transition: color var(--transition-fast);
+}
+
+.sf-footer-col-links a:hover,
+.sf-footer-col-links button:hover {
+  color: var(--accent-primary-hover);
+}
+
+/* BOTTOM */
+.sf-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-lg);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.sf-footer-copyright {
+  color: var(--text-muted);
+}
+
+.sf-footer-note {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 900px) {
+  .sf-footer-top {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .sf-footer-columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .sf-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

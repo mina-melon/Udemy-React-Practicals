@@ -1,0 +1,201 @@
+.sf-filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.sf-filter-controls-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.sf-filter-selects-group {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.sf-filter-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+
+.sf-filter-label {
+  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.sf-custom-select-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sf-filter-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 42px;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0 34px 0 14px;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.sf-filter-dropdown:hover {
+  border-color: var(--border-medium);
+  background-color: var(--bg-surface-hover);
+}
+
+.sf-filter-dropdown:focus {
+  border-color: var(--accent-primary);
+}
+
+.sf-filter-chevron {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  color: var(--text-muted);
+}
+
+/* ACTIONS GROUP */
+.sf-filter-actions-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sf-clear-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.sf-clear-filters-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary-hover);
+  background-color: var(--accent-subtle);
+}
+
+.sf-view-mode-toggle {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  gap: 2px;
+}
+
+.sf-view-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.sf-view-toggle-btn:hover {
+  color: var(--text-primary);
+}
+
+.sf-view-toggle-btn.is-active {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+/* GENRE PILLS QUICK SCROLL */
+.sf-genre-pills-scroll {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-top: var(--space-xs);
+  padding-bottom: 2px;
+}
+
+.sf-genre-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.sf-genre-pill-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.sf-genre-pill-btn.is-selected {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+@media (max-width: 860px) {
+  .sf-filter-controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sf-filter-selects-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .sf-filter-actions-group {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .sf-filter-selects-group {
+    grid-template-columns: 1fr;
+  }
+}

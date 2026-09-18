@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0C0E14" />
+  <rect x="1" y="1" width="46" height="46" rx="11" stroke="#E50914" stroke-width="1.5" stroke-opacity="0.4" />
+  <path d="M19 14L34 24L19 34V14Z" fill="url(#crimson_grad)" />
+  <defs>
+    <linearGradient id="crimson_grad" x1="19" y1="14" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF2E3D" />
+      <stop offset="1" stop-color="#B30710" />
+    </linearGradient>
+  </defs>
+</svg>

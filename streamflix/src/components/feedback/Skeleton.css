@@ -1,0 +1,150 @@
+/* Shimmer Skeleton Styles */
+.sf-skeleton-box {
+  background-color: var(--bg-surface-elevated);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.sf-skeleton-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.8s infinite ease-in-out;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* SKELETON CARD */
+.sf-card-skeleton {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.sf-card-skeleton-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+}
+
+.sf-card-skeleton-info {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sf-skeleton-line {
+  height: 14px;
+  border-radius: var(--radius-xs);
+}
+
+.sf-skeleton-title {
+  width: 80%;
+  height: 16px;
+}
+
+.sf-skeleton-meta {
+  width: 50%;
+  height: 12px;
+}
+
+/* SKELETON HERO */
+.sf-hero-skeleton {
+  position: relative;
+  min-height: 65vh;
+  max-height: 800px;
+  background-color: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  padding-top: var(--header-height);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sf-hero-skeleton-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sf-hero-skeleton-badge {
+  width: 120px;
+  height: 24px;
+}
+
+.sf-hero-skeleton-title {
+  width: 75%;
+  height: 48px;
+}
+
+.sf-hero-skeleton-desc {
+  width: 100%;
+  height: 64px;
+}
+
+.sf-hero-skeleton-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.sf-hero-skeleton-btn {
+  width: 150px;
+  height: 48px;
+}
+
+/* SKELETON DETAILS */
+.sf-details-skeleton {
+  padding-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.sf-details-skeleton-hero {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-2xl);
+}
+
+.sf-details-skeleton-poster {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+}
+
+.sf-details-skeleton-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .sf-details-skeleton-hero {
+    grid-template-columns: 1fr;
+  }
+  .sf-details-skeleton-poster {
+    max-width: 220px;
+  }
+}

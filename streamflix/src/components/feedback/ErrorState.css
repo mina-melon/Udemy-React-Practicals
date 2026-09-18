@@ -1,0 +1,51 @@
+.sf-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(229, 9, 20, 0.25);
+  border-radius: var(--radius-xl);
+  max-width: 540px;
+  margin: var(--space-2xl) auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.sf-error-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: rgba(229, 9, 20, 0.12);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  margin-bottom: var(--space-md);
+}
+
+.sf-error-icon {
+  color: var(--accent-primary);
+}
+
+.sf-error-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.sf-error-message {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  max-width: 420px;
+}
+
+.sf-error-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

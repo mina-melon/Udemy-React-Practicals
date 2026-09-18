@@ -1,0 +1,106 @@
+.sf-watchlist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-normal);
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.sf-watchlist-btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ICON ONLY VARIANT */
+.sf-watchlist-icon {
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.sf-watchlist-btn:hover .sf-watchlist-icon {
+  transform: scale(1.15);
+}
+
+.sf-watchlist-btn.is-active .sf-watchlist-icon.active {
+  color: var(--accent-primary);
+}
+
+.sf-watchlist-icon.sf-watchlist-icon-only,
+.sf-watchlist-icon.sf-watchlist-sm,
+.sf-watchlist-icon.sf-watchlist-md,
+.sf-watchlist-icon.sf-watchlist-lg {
+  border-radius: var(--radius-full);
+}
+
+.sf-watchlist-icon.sf-watchlist-sm {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(9, 11, 16, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sf-watchlist-icon.sf-watchlist-md {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(9, 11, 16, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sf-watchlist-icon.sf-watchlist-lg {
+  width: 46px;
+  height: 46px;
+  background-color: rgba(9, 11, 16, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sf-watchlist-icon:hover {
+  background-color: rgba(229, 9, 20, 0.2);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary-hover);
+}
+
+.sf-watchlist-icon.is-active {
+  background-color: rgba(229, 9, 20, 0.2);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* BUTTON VARIANT */
+.sf-watchlist-button {
+  gap: var(--space-xs);
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 10px 20px;
+  font-size: 0.9375rem;
+}
+
+.sf-watchlist-button.sf-watchlist-lg {
+  padding: 14px 26px;
+  font-size: 1.0625rem;
+  border-radius: var(--radius-lg);
+}
+
+.sf-watchlist-button:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.sf-watchlist-button.is-active {
+  background-color: var(--accent-subtle);
+  border-color: var(--accent-border);
+  color: var(--accent-primary-hover);
+}

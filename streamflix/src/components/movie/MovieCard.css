@@ -1,0 +1,209 @@
+.sf-movie-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  transition: transform var(--transition-normal),
+              box-shadow var(--transition-normal),
+              border-color var(--transition-normal);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.sf-movie-card:focus-visible {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.sf-movie-card:hover {
+  transform: translateY(-6px) scale(1.025);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-card-hover);
+  background-color: var(--bg-card-hover);
+}
+
+/* MEDIA WRAPPER */
+.sf-card-media-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-surface-elevated);
+}
+
+/* 2:3 POSTER RATIO */
+.sf-card-poster .sf-card-media-wrapper {
+  aspect-ratio: 2 / 3;
+}
+
+/* 16:9 BACKDROP RATIO */
+.sf-card-backdrop .sf-card-media-wrapper {
+  aspect-ratio: 16 / 9;
+}
+
+.sf-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth), filter var(--transition-normal);
+}
+
+.sf-movie-card:hover .sf-card-image {
+  transform: scale(1.06);
+  filter: brightness(1.08);
+}
+
+/* TOP BADGES */
+.sf-card-top-badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 3;
+}
+
+/* ACTION CORNER (BOOKMARK / REMOVE) */
+.sf-card-action-corner {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 4;
+}
+
+.sf-card-remove-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: rgba(15, 18, 26, 0.85);
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  color: #ff4d5a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.sf-card-remove-btn:hover {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* HOVER OVERLAY */
+.sf-card-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 11, 16, 0.2) 0%,
+    rgba(9, 11, 16, 0.6) 60%,
+    rgba(9, 11, 16, 0.95) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+  z-index: 2;
+}
+
+.sf-movie-card:hover .sf-card-hover-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sf-card-hover-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sf-card-hover-play-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px var(--accent-glow);
+  transform: scale(0.85);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.sf-movie-card:hover .sf-card-hover-play-btn {
+  transform: scale(1);
+}
+
+.sf-card-hover-play-btn:hover {
+  background-color: var(--accent-primary-hover);
+  transform: scale(1.1);
+}
+
+.sf-card-hover-hint {
+  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* CARD INFO */
+.sf-card-info {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: var(--bg-card);
+  transition: background-color var(--transition-normal);
+}
+
+.sf-movie-card:hover .sf-card-info {
+  background-color: var(--bg-card-hover);
+}
+
+.sf-card-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.sf-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.sf-card-year {
+  color: var(--text-secondary);
+}
+
+.sf-card-genre {
+  color: var(--text-muted);
+}
+
+.sf-card-meta-divider {
+  font-size: 0.625rem;
+  opacity: 0.6;
+}
+
+.sf-card-runtime {
+  color: var(--text-muted);
+}
