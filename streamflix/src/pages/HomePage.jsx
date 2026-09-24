@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from '../components/hero/Hero';
 import MovieSection from '../components/movie/MovieSection';
 import Badge from '../components/common/Badge';
@@ -13,10 +13,27 @@ import {
 } from '../data/mockMovies';
 import './HomePage.css';
 
+const movies = {
+  TRENDING_MOVIES: [],
+  POPULAR_MOVIES: [],
+  TOP_RATED_MOVIES: [],
+  UPCOMING_MOVIES: [],
+  RECOMMENDED_MOVIES: [],
+  GENRES: [],
+  FEATURED_HERO_MOVIE: {},
+}
 export default function HomePage({
-  onSelectMovie = () => {},
-  onNavigate = () => {},
+  onSelectMovie = () => { },
+  onNavigate = () => { },
 }) {
+  const [movies, setMovies] = useState(movies);
+
+  useEffect(() => {
+    const trending = fetch(`https://api.themoviedb.org/3/trending/movie/day/?api_key=0a9cc762c85316ace4128e0b0875d904`);
+    const trendingRes = trending.json();
+    setMovies((prevMovies) => )
+
+  }, [])
   return (
     <div className="sf-page sf-home-page fade-in">
       {/* Featured Cinematic Hero Section */}
