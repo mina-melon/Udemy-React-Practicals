@@ -1,8 +1,8 @@
-export default function Button({ children, className, textOnly, ...props }) {
-  let cssClasses = textOnly ? 'text-button' : 'button'
+export default function Button({ children, className = '', textOnly, ...props }) {
+  let cssClasses = textOnly ? 'text-button' : 'button';
   cssClasses += ' ' + className;
   return (
-    <button className={cssClasses} {...props}>
+    <button className={cssClasses.trim()} {...props}>
       {children}
     </button>
   );
