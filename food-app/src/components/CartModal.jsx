@@ -5,14 +5,16 @@ import { currencyFormatter } from '../util/currencyFormatter';
 import { use } from 'react';
 import { userProgressContext } from '../store/UserProgress';
 
-export default function CartModal({ open, onClose }) {
+export default function CartModal({ open }) {
   const { items, addItem, removeItem } = use(CartContext);
-  const { progress, hideCart } = use(userProgressContext);
+  const { progress, hideCart, showCheckout } = use(userProgressContext);
   const totalPrice = items.reduce((total, item) => {
     return total + item.price * item.quantity
   }, 0)
+
+
   return (
-    <Modal className="cart" open={progress === 'cart'}>
+    <Modal className="cart" open={progress === 'cart'} onClose={progress === 'cart' ? hideCart : null}>
       <h2>Your Cart</h2>
 
       {/* Cart Items List */}
@@ -38,7 +40,7 @@ export default function CartModal({ open, onClose }) {
         <Button textOnly onClick={hideCart}>
           Close
         </Button>
-        <Button>Go to Checkout</Button>
+        {items.length >= 1 && <Button onClick={showCheckout}>Go to Checkout</Button>}
       </p>
     </Modal>
   );
