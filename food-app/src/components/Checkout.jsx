@@ -7,6 +7,8 @@ import { userProgressContext } from '../store/UserProgress';
 export default function Checkout({ open, onClose }) {
   const { progress, hideCheckout } = use(userProgressContext);
 
+
+
   return (
     <Modal open={open ?? progress === 'checkout'}>
       <form>
